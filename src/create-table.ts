@@ -8,8 +8,8 @@ async function createTable() {
             CREATE TABLE cities (
                 name VARCHAR(55),
                 country VARCHAR(55),
-                population INTERGER,
-                area INTERGER
+                population INTEGER,
+                area INTEGER
             )
         `
 
