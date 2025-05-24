@@ -16,8 +16,8 @@ async function createEntries() {
         values($1, $2, $3, $4)
         RETURNING *;
     ` 
-    const citiesResult = await client.query(insertCities, ["Tokyo", "Japan", 38505000, 8223]);
-    console.log("Data Inserted ->", citiesResult)
+    const citiesResult = await client.query(insertCities, ["Sao Paulo", "Brazil", 20935000, 3043]);
+    console.log("Data Inserted ->", citiesResult.rows)
 }
 
 
