@@ -46,7 +46,12 @@ import { getClient } from "./utils";
 const getCities = async () => {
     const client = await getClient();
 
-    const getCitiesQuery = `SELECT * FROM cities`;
+    // const getCitiesQuery = `SELECT * FROM cities`
+    // const getCitiesQuery = `SELECT name, population/area AS population_density FROM cities`;  // Virtual column with Calculations
+    // const getCitiesQuery = `SELECT * FROM cities WHERE name <> 'Delhi'`;  // Where with != or <>
+    // const getCitiesQuery = `SELECT * FROM cities WHERE name <> 'Delhi' AND name <> 'Tokyo'`;  // Where with AND/OR
+    // const getCitiesQuery = `SELECT * FROM cities WHERE name NOT IN ('Delhi', 'Tokyo')`;  // Where with IN/NOT IN
+    const getCitiesQuery = `SELECT name, population/area AS population_density FROM cities WHERE population/area BETWEEN 4000 AND 5000`;  // Where with BETWEEN and calculations
 
     const result = await client.query(getCitiesQuery);
     console.log("result ->", result.rows);
