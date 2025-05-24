@@ -46,6 +46,26 @@ import { getClient } from "./utils";
 const getCities = async () => {
     const client = await getClient();
 
+    // SELECT name || country FROM cities;
+
+    // SELECT name || ', ' || country FROM cities;
+
+    // SELECT name || ', ' || country AS location FROM cities;
+
+    // SELECT CONCAT(name, country) AS location FROM cities;
+
+    // SELECT CONCAT(name, ', ', country) AS location FROM cities;
+
+    // SELECT
+    // CONCAT(UPPER(name), ', ', UPPER(country)) AS location
+    // FROM
+    // cities;
+
+    // SELECT
+    // UPPER(CONCAT(name, ', ', country)) AS location
+    // FROM
+    // cities;
+
     // const getCitiesQuery = `SELECT * FROM cities`
     // const getCitiesQuery = `SELECT name, population/area AS population_density FROM cities`;  // Virtual column with Calculations
     // const getCitiesQuery = `SELECT * FROM cities WHERE name <> 'Delhi'`;  // Where with != or <>
